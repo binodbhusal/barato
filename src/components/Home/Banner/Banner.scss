@@ -1,0 +1,101 @@
+@import "../../../css-config/mixins.scss";
+
+.head-banner {
+    padding: 2.4rem;
+    position: relative;
+    background-image: linear-gradient(to right, #8e2de2, #4a00e0);
+    @include md {
+        height: calc(100vh - 80px);
+    }
+    .content {
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-direction: column-reverse;
+        max-width: calc(100% - 20px);
+        margin: 0 auto;
+        position: relative;
+        @include md {
+            flex-direction: row;
+            max-width: 100%;
+        }
+        .banner-image {
+            position: relative;
+            width: 200px;
+            margin-bottom: 20px;
+            z-index: 9;
+            @include md {
+                width: 500px;
+                margin: 60px 50px 0 0 ;
+            }
+            @include xxl {
+                width: 600px;
+                margin: 0 0 0 0 ;
+            }
+        }
+        .text-content {
+            color: #fff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            @include md {
+                position: absolute;
+                left: 50px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            @include xxl {
+                left: 0;
+            }
+            h1{
+                font-size: 5rem;
+                font-weight: 700;
+                line-height: 1;
+                margin-bottom: 1rem;
+                @include md {
+                    font-size: 12rem;
+                }
+            }
+            p {
+                max-width: 300px;
+                font-size: 0.9rem;
+                line-height: 1.25rem;
+                margin-bottom: 1.25rem;
+                @include md {
+                    max-width: 500px;
+                    font-size: 1.25rem;
+                    line-height: 1.5rem;
+                    margin-bottom: 2.5rem;
+                }
+            }
+            .call-to-actions{
+                display: flex;
+                justify-content: center;
+                gap: 1rem;
+                @include md {
+                    gap: 1.5rem;
+                }
+              
+                .call-to-action {
+                    border: 1px solid #fff;
+                    font-size: 1rem;
+                    font-weight: 700;
+                    padding: 10px 20px;
+                    cursor: pointer;
+                    border-radius: 4px;
+                    text-transform: uppercase;
+                     
+                    &:hover {
+                        opacity: 0.6;
+                    }
+                }
+                .call-to-action2 {
+                    background-color: #fff;
+                    color: #000;
+                }
+            }
+        }
+    }
+}
