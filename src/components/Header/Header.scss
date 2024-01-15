@@ -1,87 +1,111 @@
 @import "../../css-config/mixins.scss";
 
 .header-container {
-    width: 100%;
-    background-color: #333;
-    color: #e5e5e5;
-    padding: 0 1.2rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    z-index: 99;
-    @include md {
-        padding: 0 2.5rem;
-    }
-   .header-content {
+  width: 100%;
+  background-color: #333;
+  color: #e5e5e5;
+  padding: 0 1.2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  z-index: 99;
+
+  @include md {
+    padding: 0 2.5rem;
+  }
+
+  .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 3.2rem;
     max-width: 1200px;
     margin: 0 auto;
-    @include md {
-        height: 4rem;
-    }
-    .left {
-       font-weight: 700;
-       font-size: 1.3rem;
-       cursor: pointer;
-    }
-    .center {
-        list-style: none;
-        display: none;
-        gap: 2rem;
-        position: absolute;
-        left: 25%;
-        transform: translate(-25%);
-        li {
-            text-transform: uppercase;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-        }
-        @include md {
-            display: flex;
-        }
-    }
-    .right {
-        display: flex;
-        gap: 1.2rem;
-        @include md {
-            gap: 1.5rem;
-        }
-        svg {
-            font-size: 1.1rem;
-            cursor: pointer;
-            align-items: center;
-            @include md {
-                font-size:1.5rem;
-            }
-        }
-        .cart-icon {
-            position: relative;
-            span{
-                min-width: 1.2rem;
-                background-color: #FF004D;
-                border-radius: 10px;
-                position: absolute;
-                top: -6px;
-                right: -12px;
-                font-size: 0.8rem;
-                line-height: 1;
-                padding: 2.5px;
-                text-align: center;
 
-            }
-        }
+    @include md {
+      height: 4rem;
     }
-   }
-   &.sticky-header{
-    background-color: #FF004D;
+
+    .left {
+      font-weight: 700;
+      font-size: 1.3rem;
+      cursor: pointer;
+
+      a {
+        text-decoration: none;
+        color: #e5e5e5;
+      }
+    }
+
+    .center {
+      list-style: none;
+      display: none;
+      gap: 2rem;
+      position: absolute;
+      left: 25%;
+      transform: translate(-25%);
+
+      a {
+        text-decoration: none;
+        color: #e5e5e5;
+      }
+
+      li {
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+
+      @include md {
+        display: flex;
+      }
+    }
+
+    .right {
+      display: flex;
+      gap: 1.2rem;
+
+      @include md {
+        gap: 1.5rem;
+      }
+
+      svg {
+        font-size: 1.1rem;
+        cursor: pointer;
+        align-items: center;
+
+        @include md {
+          font-size: 1.5rem;
+        }
+      }
+
+      .cart-icon {
+        position: relative;
+
+        span {
+          min-width: 1.2rem;
+          background-color: #ff004d;
+          border-radius: 10px;
+          position: absolute;
+          top: -6px;
+          right: -12px;
+          font-size: 0.8rem;
+          line-height: 1;
+          padding: 2.5px;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  &.sticky-header {
+    background-color: #ff004d;
     position: sticky;
     top: 0;
     animation: skickyHeader 0.3s ease forwards;
-   }
+  }
 }
+
 @keyframes skickyHeader {
-    0% {transform: translateY(-4rem)};
-    100% {transform: translateY(0)};
+  0% { transform: translateY(-4rem); }
+  100% { transform: translateY(0); }
 }
