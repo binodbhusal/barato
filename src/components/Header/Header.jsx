@@ -2,10 +2,19 @@ import { TbSearch } from 'react-icons/tb';
 import { CgShoppingBag } from 'react-icons/cg';
 import { AiOutlineHeart } from 'react-icons/ai';
 import './Header.scss';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import Cart from '../Cart/Cart';
+import Search from './Search/Search';
+import { Context } from '../../utils/context';
 
 const Header = () => {
+  const { cartCount } = useContext(Context);
+  const navigate = useNavigate();
   const [scrolls, setScrolls] = useState(false);
+  const [showCart, setShowCart] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
+
   const handleScroll = () => {
     const offset = window.scrollY;
     if (offset > 200) {
@@ -17,28 +26,38 @@ const Header = () => {
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
   });
+  const handleClick = () => {
+    navigate('/');
+  };
   return (
-    <header className={`header-container ${scrolls ? 'sticky-header' : ''}`}>
-      <div className="header-content">
-        <div className="left">
-          <h4>barato</h4>
+    <>
+      <header className={`header-container ${scrolls ? 'sticky-header' : ''}`}>
+        <div className="header-content">
+          <div className="left">
+            <Link to="/" onClick={handleClick}>
+              <h4> barato</h4>
+            </Link>
+          </div>
+          <ul className="center">
+            <Link to="/" onClick={handleClick}>
+              <li>Home</li>
+            </Link>
+            <li>Category</li>
+            <li>About</li>
+          </ul>
+          <div className="right">
+            <TbSearch onClick={() => setShowSearch(true)} />
+            <AiOutlineHeart />
+            <span className="cart-icon">
+              <CgShoppingBag onClick={() => setShowCart(true)} />
+              {!!cartCount && <span>{cartCount}</span>}
+            </span>
+          </div>
         </div>
-        <ul className="center">
-          <li>Home</li>
-          <li>About</li>
-          <li>Category</li>
-        </ul>
-        <div className="right">
-          <TbSearch />
-          <AiOutlineHeart />
-          <span className="cart-icon">
-            <CgShoppingBag />
-            <span>6</span>
-          </span>
-        </div>
-      </div>
-    </header>
-
+      </header>
+      {showCart && <Cart setShowCart={setShowCart} />}
+      {showSearch && <Search setShowSearch={setShowSearch} />}
+    </>
   );
 };
 export default Header;
