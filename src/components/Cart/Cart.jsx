@@ -1,14 +1,13 @@
-import { useEffect } from 'react';
+import { useContext } from 'react';
 import { MdClose } from 'react-icons/md';
-// import { BsCartX } from 'react-icons/bs';
+import { BsCartX } from 'react-icons/bs';
 import PropTypes from 'prop-types';
 import CartItem from './CartItem/CartItem';
 import './Cart.scss';
+import { Context } from '../../utils/context';
 
 const Cart = ({ setShowCart }) => {
-  useEffect(() => {
-
-  });
+  const { cartItems, cartSubTotal } = useContext(Context);
   return (
     <>
       <div className="cart-panel">
@@ -25,23 +24,31 @@ const Cart = ({ setShowCart }) => {
               <span className="text">Close</span>
             </button>
           </div>
-          {/* <div className="empty-card">
+          {!cartItems?.length && (
+          <div className="empty-card">
             <BsCartX />
             <span>No Products in the Cart.</span>
             <button type="button" className="btn-cta">RETURN TO SHOP</button>
-          </div> */}
+          </div>
+          )}
+          {!!cartItems?.length && (
           <>
             <CartItem />
             <div className="cart-footer">
               <div className="sub-total">
                 <span className="text">Subtotal:</span>
-                <span className="text total">&euro;49,99</span>
+                <span className="text total">
+                  &euro;
+                  {' '}
+                  {cartSubTotal}
+                </span>
               </div>
               <div className="button">
                 <button type="button" className="checkout-cta">Checkout</button>
               </div>
             </div>
           </>
+          )}
         </div>
       </div>
     </>
