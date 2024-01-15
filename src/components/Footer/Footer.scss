@@ -1,69 +1,82 @@
 @import "../../css-config/mixins.scss";
+
 .footer-section {
-    width: 100%;
-    .footer-content{
-        padding: 3rem 1.25rem;
+  width: 100%;
+
+  .footer-content {
+    padding: 3rem 1.25rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: wrap;
+    gap: 1.25rem;
+
+    @include md {
+      justify-content: space-between;
+      padding: 3rem 0;
+    }
+
+    .col {
+      max-width: 300px;
+
+      .title {
+        margin-bottom: 1.25rem;
+        font-size: 1.25rem;
+      }
+
+      .text {
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 0.9rem;
+      }
+
+      .c-item {
+        display: flex;
+        margin-bottom: 0.6rem;
+
+        svg {
+          flex-shrink: 0;
+          font-size: 0.9rem;
+          margin-right: 0.6rem;
+          margin-top: 0.3rem;
+          color: rgba(0, 0, 0, 0.5);
+        }
+      }
+
+      span {
+        &.text {
+          display: block;
+          margin-bottom: 0.4rem;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .bottom-bar {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+
+    .bottom-bar-content {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.6rem;
+
+      @include md {
+        padding: 0;
+        height: 60px;
         max-width: 1200px;
         margin: 0 auto;
-        display: flex;
-        flex-flow: wrap;
-        gap: 1.25rem;
-        @include md {
-            justify-content: space-between;
-            padding: 3rem 0;
-        }
-        .col {
-            max-width: 300px;
-            .title{
-                margin-bottom: 1.25rem;
-                font-size: 1.25rem;
-            }
-            .text{
-                color: rgba(0,0,0,0.5);
-                font-size: 0.9rem;
-            }
-            .c-item {
-                display: flex;
-                margin-bottom: 0.6rem;
-                svg {
-                    flex-shrink: 0;
-                    font-size: 0.9rem;
-                    margin-right: 0.6rem;
-                    margin-top: 0.3rem;
-                    color: rgba(0,0,0,0.5);
-                }
-            }
-            span {
-                &.text {
-                    display: block;
-                    margin-bottom: 0.4rem;
-                    cursor: pointer;
-                }
-            }
-        }
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
+
+      .text {
+        font-size: 0.9rem;
+        color: rgba(0, 0, 0, 0.5);
+      }
     }
-    .bottom-bar {
-        border-top: 1px solid rgba(0,0,0,0.2);
-        .bottom-bar-content{
-            padding: 1.25rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            gap: 0.6rem;
-            @include md {
-                padding: 0;
-                height: 60px;
-                max-width: 1200px;
-                margin: 0 auto;
-                flex-direction: row;
-                justify-content: space-between;
-                text-align: left;
-            }
-            .text{
-                font-size: 0.9rem;
-                color: rgba(0,0,0,0.5);
-            }
-        }
-    }
+  }
 }
