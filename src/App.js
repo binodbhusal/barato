@@ -1,10 +1,27 @@
 import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Header from './components/Header/Header';
+import Home from './components/Home/Home';
+import Category from './components/Category/Category';
+import Singleproduct from './components/SingleProduct/SingleProduct';
+import NewsLetter from './components/Footer/NewsLetter/NewsLetter';
+import Footer from './components/Footer/Footer';
+import AppContext from './utils/context';
 
 function App() {
   return (
-    <div className="app">
-      <h1> Welcome to barato one way platform for your shoping joys</h1>
-    </div>
+    <BrowserRouter>
+      <AppContext>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/category/:id" element={<Category />} />
+          <Route path="/singleproduct/:id" element={<Singleproduct />} />
+        </Routes>
+        <NewsLetter />
+        <Footer />
+      </AppContext>
+    </BrowserRouter>
   );
 }
 
