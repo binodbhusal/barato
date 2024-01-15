@@ -1,96 +1,109 @@
 @import "../../../css-config/mixins.scss";
 
 .newsletter-section {
-    width: 100%;
-    height: 400px;
-    align-items: center;
-    background: #f9f9f9 url("../../../assets/newsletter-bg.jpeg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+  width: 100%;
+  height: 400px;
+  align-items: center;
+  background: #f9f9f9 url("../../../assets/newsletter-bg.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+
+  .newsletter-content {
+    width: fit-content;
     display: flex;
-    .newsletter-content {
-        width: fit-content;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 0 auto;
-        text-align: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .small-text {
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  .big-text {
+    margin-bottom: 1.3rem;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 0 2rem;
+
+    @include md {
+      font-size: 1.2rem;
     }
-    .small-text {
-        margin-bottom: 1rem;
-        text-transform: uppercase;
-        color: rgba(0,0,0,0.5);
+  }
+
+  .form {
+    display: flex;
+    gap: 0.4rem;
+    margin-bottom: 0.6rem;
+
+    input {
+      width: 200px;
+      height: 40px;
+      border-radius: 8px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      padding: 0 12px;
+      font-size: 16px;
+      outline: 0;
+
+      @include md {
+        width: 300px;
+      }
     }
-    .big-text {
-        margin-bottom: 1.3rem;
-        font-size: 1.4rem;
-        line-height: 2rem;
-        font-weight: 500;
-        text-transform: uppercase;
-        padding: 0 2rem;
-        @include md {
-            font-size: 1.2rem;
-        }
+
+    button {
+      outline: 0;
+      width: 100px;
+      height: 40px;
+      border: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 15px;
+      color: #fff;
+      background-color: #8e2de2;
+      border-bottom: 3px solid #8e2de2;
+      padding: 0 5px;
+      border-radius: 8px;
+
+      @include md {
+        width: 120px;
+      }
     }
-    .form {
-        display: flex;
-        gap: 0.4rem;
-        margin-bottom: 0.6rem;
-        input {
-            width: 200px;
-            height: 40px;
-            border-radius: 8px;
-            border: 1px solid rgba(0,0,0,0.2);
-            padding: 0 12 px;
-            font-size: 16px;
-            outline: 0;
-            @include md {
-                width: 300px;
-            }
-        }
-        button {
-            outline: 0;
-            width: 100px;
-            height: 40px;
-            border: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 15px;
-            color: #fff;
-            background-color: #8e2de2;
-            border-bottom: 3px solid #8e2de2;
-            padding: 0 5px;
-            border-radius: 8px;
-            @include md {
-                width: 120px;
-            }
-        }
+  }
+
+  .text {
+    margin-bottom: 1.3rem;
+    font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 1rem;
+
+    .icons {
+      width: 30px;
+      height: 30px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #f9f9f9;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.5;
+        transition: 0.3s ease-in-out;
+      }
     }
-    .text {
-        margin-bottom: 1.3rem;
-        font-size: 0.9rem;
-        color: rgba(0,0,0,0.5);
-    }
-    .social-icons{
-        display: flex;
-        gap: 1rem;
-        .icons {
-           width: 30px;
-           height: 30px;
-           background-color: rgba(0,0,0,0.6);
-           border-radius: 50%;
-           display: flex;
-           justify-content: center;
-           align-items: center;
-           color: #f9f9f9;
-           cursor: pointer;
-           &:hover {
-            opacity: 0.5;
-            transition: 0.3s ease-in-out;
-           }
-        }
-    }
+  }
 }
