@@ -1,18 +1,13 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import './Product.scss';
-import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 
 const Product = ({ id, data }) => {
   const navigate = useNavigate();
-  useEffect(() => {
-
-  });
   const handleProductClick = () => {
-    navigate(`singleproduct/${id}`);
-    window.scrollTo(0, 0);
+    navigate(`/singleproduct/${id}`);
   };
   return (
     <div
@@ -30,8 +25,7 @@ const Product = ({ id, data }) => {
         <sapn className="name">{data.title}</sapn>
         <sapn className="price">
           &euro;
-          {data.price}
-
+          { data.price }
         </sapn>
       </div>
     </div>
