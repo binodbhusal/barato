@@ -19,7 +19,6 @@ const Home = () => {
   const getProducts = useCallback(() => {
     fetchDataFromApi('/api/products?populate=*')
       .then((res) => {
-        console.log(res);
         setProducts(res);
       });
   }, [setProducts]);
@@ -39,7 +38,6 @@ const Home = () => {
         </div>
       </div>
     </div>
-
   );
 };
 
