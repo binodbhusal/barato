@@ -1,0 +1,60 @@
+@import "../../../css-config/mixins.scss";
+
+.carousel-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  .carousel-content {
+    display: flex;
+    transition: transform 0.4s ease-out;
+    transform: translateX(-100%);
+  }
+
+  .btn-container {
+    position: absolute;
+    margin: 0 auto;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+
+    button {
+      border-radius: 50%;
+      background-color: #fff;
+      padding: 5px;
+      opacity: 80%;
+      border: none;
+
+      &:hover {
+        background-color: #fff;
+      }
+    }
+  }
+
+  .indicator-container {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    width: 10%;
+    margin: 0 auto;
+
+    .indicator-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .indicator {
+      background-color: #fff;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+    }
+  }
+}
