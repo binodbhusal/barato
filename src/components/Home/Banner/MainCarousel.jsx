@@ -22,20 +22,21 @@ const MainCarousel = ({ children: slides, autoSlides = false, autoSlidesInterval
   return (
     <div
       className="carousel-container"
-      style={{ objectFit: 'cover', width: '100%', height: '600px' }}
+
     >
       <div
         className="carousel-content"
-        style={{ transform: `translateX(-${current * 100}%)` }}
+        style={{ transform: `translateX(-${current * 100}%) `, objectFit: 'cover', width: '100%' }}
+
       >
         {slides}
       </div>
       <div className="btn-container">
         <button type="button" aria-label="btn" onClick={prev}>
-          <MdOutlineNavigateBefore style={{ fontSize: '35px' }} />
+          <MdOutlineNavigateBefore style={{ fontSize: '40px' }} />
         </button>
         <button type="button" aria-label="btn" onClick={next}>
-          <MdOutlineNavigateNext style={{ fontSize: '35px' }} />
+          <MdOutlineNavigateNext style={{ fontSize: '40px' }} />
         </button>
       </div>
       <div className="indicator-container">
