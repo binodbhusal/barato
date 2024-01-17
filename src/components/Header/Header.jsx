@@ -1,6 +1,8 @@
 import { TbSearch } from 'react-icons/tb';
 import { CgShoppingBag } from 'react-icons/cg';
-import { AiOutlineHeart } from 'react-icons/ai';
+
+import { IoPersonOutline } from 'react-icons/io5';
+
 import './Header.scss';
 import { useEffect, useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
@@ -35,19 +37,27 @@ const Header = () => {
         <div className="header-content">
           <div className="left">
             <Link to="/" onClick={handleClick}>
-              <h4> barato</h4>
+              <img
+                src="../assets/barato-logo.png"
+                alt=""
+              />
             </Link>
           </div>
           <ul className="center">
             <Link to="/" onClick={handleClick}>
               <li>Home</li>
             </Link>
-            <li>Category</li>
+            <li>Categories</li>
             <li>About</li>
           </ul>
           <div className="right">
-            <TbSearch onClick={() => setShowSearch(true)} />
-            <AiOutlineHeart />
+            <div className="search-container">
+              <input type="text" placeholder="Search" onClick={() => setShowSearch(true)} />
+              <TbSearch className="search-icon" onClick={() => setShowSearch(true)} />
+            </div>
+            <div className="person">
+              <IoPersonOutline className="person" />
+            </div>
             <span className="cart-icon">
               <CgShoppingBag onClick={() => setShowCart(true)} />
               {!!cartCount && <span>{cartCount}</span>}
