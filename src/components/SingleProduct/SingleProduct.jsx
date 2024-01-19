@@ -1,28 +1,38 @@
 import { useParams } from 'react-router-dom';
-import { useState, useContext } from 'react';
+import {
+  useContext, useState,
+} from 'react';
 import './SingleProduct.scss';
+import '../Cart/CartItem/CartItem.scss';
+import '../Cart/Cart.scss';
+
 import { FaCartPlus, FaFacebook } from 'react-icons/fa';
 import { FaSquareXTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa6';
 import RelatedProducts from './RelatedProducts/RelatedProducts';
 import useFetch from '../../hooks/useFetch';
 import { Context } from '../../utils/context';
+import Cart from '../Cart/Cart';
 
 const Singleproduct = () => {
-  const { handleAddtoCart } = useContext(Context);
+  const { handleAddtoCart, quantity, setQuantity } = useContext(Context);
+  const [showCart, setShowCart] = useState(false);
+
   const { id } = useParams();
-  const [quantity, setQuantity] = useState(1);
   const { data } = useFetch(`/api/products?populate=*&[filters][id]=${id}`);
+
   if (!data || !data.data || data.data.length === 0) return null;
 
   const product = data.data[0].attributes;
   const handleIncrement = () => setQuantity((prevState) => prevState + 1);
   const handleDecrement = () => {
-    setQuantity((prevState) => (prevState === 1 ? 1 : prevState - 1));
+    setQuantity((prevState) => Math.max((prevState - 1, 1)));
   };
+
   return (
     <div className="single-product-main-content">
       <div className="layout">
         <div className="single-product-page">
+
           <div className="left">
             <img
               src={
@@ -33,7 +43,7 @@ const Singleproduct = () => {
             />
           </div>
           <div className="right">
-            <span className="name">{product.title}</span>
+            <span className="single-name">{product.title}</span>
             <span className="price">
               {' '}
               &euro;
@@ -41,8 +51,8 @@ const Singleproduct = () => {
               {product.price}
             </span>
             <span className="description">{product.Description}</span>
-            <div className="cart-buttons">
-              <div className="quantity-buttons">
+            <div className="cart1-buttons">
+              <div className="quantity1-buttons">
                 <span>
                   {' '}
                   <button type="button" className="btn-incre" onClick={handleDecrement}>-</button>
@@ -56,17 +66,20 @@ const Singleproduct = () => {
                 onClick={() => {
                   handleAddtoCart(data.data[0], quantity);
                   setQuantity(1);
+                  setShowCart(true);
                 }}
               >
                 <FaCartPlus size={20} />
                 ADD TO CART
               </button>
+              {showCart && <Cart showCart={showCart} setShowCart={setShowCart} />}
+
             </div>
             <sapn className="divider" />
             <div className="info-item">
               <span className="text-bold">
                 Category:
-                <span>
+                <span style={{ color: '#FC628D' }}>
                   {' '}
                   {product.categories.data[0].attributes.title}
                 </span>
@@ -89,6 +102,7 @@ const Singleproduct = () => {
           categoryId={product.categories.data[0].id}
         />
       </div>
+
     </div>
 
   );
