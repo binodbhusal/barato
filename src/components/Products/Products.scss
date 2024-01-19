@@ -6,39 +6,57 @@
   @include md {
     margin: 4.5rem 0;
   }
+  
+}
+.tab-menu {
+  background-color: #0C4175;
+  border-radius: 10px;
+  font-size: 1rem;
 
-  .section-heading {
-    font-size: 1.2rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    margin-bottom: 1.5rem;
+li{
+  
+  button {
+  color: #fff;
+  font-size: 1.1rem;
 
-    @include md {
-      margin-bottom: 2rem;
-      font-size: 1.5rem;
-    }
+  &:hover {
+    color: #FC628D;
+  }
+}
+}
 
-    &::after {
-      content: "";
-      display: block;
-      margin-top: 0.2rem;
-      width: 3rem;
-      height: 0.2rem;
-      background-color: #8e2de2;
-
-      @include md {
-        margin-top: 0.5rem;
-      }
-    }
+}
+.section-heading {
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  color:#0C4175;
+  @include md {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
   }
 
-  .products {
-    display: flex;
-    flex-flow: wrap;
-    gap: 0.7rem;
+  &::after {
+    content: "";
+    display: block;
+    margin-top: 0.2rem;
+    width: 3rem;
+    height: 0.2rem;
+    background-color: #8e2de2;
 
     @include md {
-      gap: 1.25rem;
+      margin-top: 0.5rem;
     }
+  }
+}
+
+.products {
+  display: flex;
+  flex-flow: wrap;
+  gap: 0.7rem;
+
+  @include md {
+    gap: 1.25rem;
   }
 }
