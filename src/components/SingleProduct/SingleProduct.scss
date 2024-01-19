@@ -28,6 +28,8 @@
       width: 100%;
       background-color: rgba(0, 0, 0, 0.05);
       flex-shrink: 0;
+      border-radius: 10px;
+      border: 1px solid rgba(12, 65, 117, 0.07);
 
       @include md {
         width: 500px;
@@ -49,13 +51,14 @@
         padding: 0 35px;
       }
 
-      .name {
-        font-size: 20px;
+      .single-name {
+        font-size: 1rem;
         line-height: 28px;
         margin-bottom: 20px;
+        color: #FC628D;
 
         @include md {
-          font-size: 24px;
+          font-size: 28px;
           line-height: 32px;
         }
       }
@@ -64,13 +67,14 @@
         font-size: 24px;
         line-height: 32px;
         margin-bottom: 20px;
+        color: red;
       }
 
       .description {
         font-size: 14px;
         line-height: 20px;
         margin-bottom: 20px;
-        color: #6b6b6b;
+        color: rgba(12, 65, 117, 0.7);
 
         @include md {
           font-size: 16px;
@@ -79,6 +83,7 @@
       }
 
       .info-item {
+        color: #0C4175;
         .share {
           margin-top: 20px;
         }
@@ -105,19 +110,21 @@
         }
       }
 
-      .cart-buttons {
+      .cart1-buttons {
         display: flex;
 
         @include md {
           margin-top: 30px;
         }
 
-        .quantity-buttons {
+        .quantity1-buttons {
           width: fit-content;
           display: flex;
-          border: 2px solid rgba(0, 0, 0, 0.2);
+          border: 1.5px solid rgba(12, 65, 117, 0.1);
           margin-right: 10px;
           height: 50px;
+          border-radius: 20px;
+          background-color: rgba(12, 65, 117, 0.1) ;
 
           span {
             font-size: 18px;
@@ -127,17 +134,19 @@
             justify-content: center;
             cursor: pointer;
             color: #6b6b6b;
-
+           
             &:nth-child(1) {
-              border-right: 2px solid rgba(0, 0, 0, 0.2);
+              border-right: 1.5px solid rgba(12, 65, 117, 0.1);
             }
 
             &:nth-child(2) {
               width: 60px;
+              background-color: #f9f9f9;
+              color: rgba(12, 65, 117, 1);
             }
 
             &:nth-child(3) {
-              border-left: 2px solid rgba(0, 0, 0, 0.2);
+              border-left: 1.5px solid rgba(12, 65, 117, 0.1);
             }
           }
 
@@ -148,6 +157,11 @@
             height: 50px;
             width: 40px;
             cursor: pointer;
+            color: rgba(12, 65, 117, 0.7);
+            &:hover {
+              color: rgba(12, 65, 117, 1);
+            }
+           
           }
         }
 
@@ -162,10 +176,13 @@
           cursor: pointer;
           font-size: 16px;
           color: #fff;
-          background-color: #8e2de2;
-          border-bottom: 3px solid #6516aa;
+          background-color: #0C4175;
+          border-radius: 20px;
           flex-grow: 1;
-
+          &:hover {
+            background-color: rgba(12, 65, 117, 0.9);
+          }
+         
           @include md {
             flex-grow: unset;
           }
