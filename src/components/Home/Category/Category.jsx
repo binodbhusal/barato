@@ -1,10 +1,12 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import './Category.scss';
+import '../../Products/Products.scss';
+
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 
-const Category = ({ categories }) => {
+const Category = ({ categories, headingText }) => {
   const navigate = useNavigate();
 
   const handleClick = (item) => {
@@ -13,6 +15,7 @@ const Category = ({ categories }) => {
 
   return (
     <div className="shop-by-category">
+      <div className="section-heading">{headingText}</div>
       <div className="categories">
         { categories?.data?.map((item) => (
           <div key={item.id} className="category" onClick={() => handleClick(item)}>
@@ -21,6 +24,11 @@ const Category = ({ categories }) => {
               src={process.env.REACT_APP_DEV_URL + (item.attributes.img.data[0]?.attributes.url || '')}
               alt=""
             />
+            <span>
+              {item.attributes.title}
+              {' '}
+
+            </span>
           </div>
         ))}
       </div>
@@ -32,8 +40,11 @@ Category.propTypes = {
   categories: PropTypes.shape({
     data: PropTypes.arrayOf(PropTypes.shape({})),
   }),
+  headingText: PropTypes.string,
+
 };
 
 Category.defaultProps = {
   categories: { data: [] },
+  headingText: PropTypes.string,
 };
