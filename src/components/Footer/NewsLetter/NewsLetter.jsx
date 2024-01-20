@@ -10,7 +10,7 @@ const NewsLetter = () => (
       <span className="big-text">Sign up for latest offers and updates</span>
       <div className="form">
         <input type="text" placeholder="Email Address" />
-        <button type="submit">Subcribe</button>
+        <button type="submit">Subscribe</button>
       </div>
       <div className="text">Will be used in accordance with our privacy policy</div>
       <div className="social-icons">

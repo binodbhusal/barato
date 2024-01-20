@@ -7,6 +7,8 @@ import './Header.scss';
 import { useEffect, useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Cart from '../Cart/Cart';
+import '../Cart/Cart.scss';
+
 import Search from './Search/Search';
 import { Context } from '../../utils/context';
 
@@ -43,7 +45,7 @@ const Header = () => {
               />
             </Link>
           </div>
-          <ul className="center">
+          <ul className="center-items">
             <Link to="/" onClick={handleClick}>
               <li>Home</li>
             </Link>
