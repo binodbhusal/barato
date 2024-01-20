@@ -7,6 +7,7 @@ import Singleproduct from './components/SingleProduct/SingleProduct';
 import NewsLetter from './components/Footer/NewsLetter/NewsLetter';
 import Footer from './components/Footer/Footer';
 import AppContext from './utils/context';
+import Success from './components/Cart/Success';
 
 function App() {
   return (
@@ -17,10 +18,13 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/category/:id" element={<Category />} />
           <Route path="/singleproduct/:id" element={<Singleproduct />} />
+          <Route path="/success" element={<Success />} />
+
         </Routes>
         <NewsLetter />
         <Footer />
       </AppContext>
+
     </BrowserRouter>
   );
 }
