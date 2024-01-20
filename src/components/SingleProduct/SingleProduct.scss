@@ -55,7 +55,7 @@
         font-size: 1rem;
         line-height: 28px;
         margin-bottom: 20px;
-        color: #FC628D;
+        color: #fc628d;
 
         @include md {
           font-size: 28px;
@@ -83,7 +83,8 @@
       }
 
       .info-item {
-        color: #0C4175;
+        color: #0c4175;
+
         .share {
           margin-top: 20px;
         }
@@ -124,7 +125,7 @@
           margin-right: 10px;
           height: 50px;
           border-radius: 20px;
-          background-color: rgba(12, 65, 117, 0.1) ;
+          background-color: rgba(12, 65, 117, 0.1);
 
           span {
             font-size: 18px;
@@ -134,7 +135,7 @@
             justify-content: center;
             cursor: pointer;
             color: #6b6b6b;
-           
+
             &:nth-child(1) {
               border-right: 1.5px solid rgba(12, 65, 117, 0.1);
             }
@@ -158,10 +159,10 @@
             width: 40px;
             cursor: pointer;
             color: rgba(12, 65, 117, 0.7);
+
             &:hover {
               color: rgba(12, 65, 117, 1);
             }
-           
           }
         }
 
@@ -176,13 +177,14 @@
           cursor: pointer;
           font-size: 16px;
           color: #fff;
-          background-color: #0C4175;
+          background-color: #0c4175;
           border-radius: 20px;
           flex-grow: 1;
+
           &:hover {
             background-color: rgba(12, 65, 117, 0.9);
           }
-         
+
           @include md {
             flex-grow: unset;
           }

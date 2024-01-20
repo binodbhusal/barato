@@ -1,0 +1,4 @@
+logo first font name: Audiowide
+logo color code:#FC628D, rgba 252 98, 141, 1
+logo color code : #0C4175, rgba: 12 65 117 1
+

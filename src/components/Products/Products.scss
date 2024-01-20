@@ -6,32 +6,32 @@
   @include md {
     margin: 4.5rem 0;
   }
-  
 }
+
 .tab-menu {
-  background-color: #0C4175;
+  background-color: #0c4175;
   border-radius: 10px;
   font-size: 1rem;
 
-li{
-  
-  button {
-  color: #fff;
-  font-size: 1.1rem;
+  li {
+    button {
+      color: #fff;
+      font-size: 1.1rem;
 
-  &:hover {
-    color: #FC628D;
+      &:hover {
+        color: #fc628d;
+      }
+    }
   }
 }
-}
 
-}
 .section-heading {
   font-size: 1.2rem;
   font-weight: 500;
   text-transform: uppercase;
   margin-bottom: 1.5rem;
-  color:#0C4175;
+  color: #0c4175;
+
   @include md {
     margin-bottom: 2rem;
     font-size: 1.5rem;

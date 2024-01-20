@@ -18,13 +18,12 @@
 
   .form-field {
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.01);
     display: flex;
     justify-content: center;
     padding: 10px 50px;
-    border-bottom: 1px solid rgba(12,65,117,0.2);
+    border-bottom: 1px solid rgba(12, 65, 117, 0.2);
     position: relative;
-    background-color: rgba(12,65,117,0.8);
+    background-color: rgba(12, 65, 117, 0.8);
     border-radius: 15px 0 0 0;
 
     @include md {
@@ -49,7 +48,6 @@
         font-size: 16px;
         height: 50px;
         width: 90%;
-
       }
     }
 
@@ -59,13 +57,14 @@
       top: 50%;
       transform: translateY(-50%);
       cursor: pointer;
-      color: #FC628D;
+      color: #fc628d;
       background-color: #f6ebee;
       border-radius: 50%;
+
       @include md {
         right: 40px;
         font-size: 30px;
-        color: #FC628D;
+        color: #fc628d;
       }
     }
   }
@@ -97,7 +96,7 @@
         cursor: pointer;
 
         .img-container {
-          background-color: rgba(12,65,117,0.1);
+          background-color: rgba(12, 65, 117, 0.1);
           width: 60px;
           height: 60px;
           flex-shrink: 0;
@@ -131,7 +130,7 @@
             text-overflow: ellipsis;
             white-space: nowrap;
             overflow: hidden;
-            color: rgba(12,65,117,0.5);
+            color: rgba(12, 65, 117, 0.5);
           }
         }
       }
