@@ -10,6 +10,8 @@ const AppContext = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
   const [cartCount, setCatrCount] = useState(0);
   const [cartSubTotal, setCartSubTotal] = useState(0);
+  const [quantity, setQuantity] = useState(1);
+
   const location = useLocation();
 
   useEffect(() => {
@@ -20,7 +22,7 @@ const AppContext = ({ children }) => {
     items.forEach((item) => {
       subTotal += item.attributes.price * item.attributes.quantity;
     });
-    return subTotal;
+    return subTotal.toFixed(2);
   };
 
   const handleCartCount = (items) => {
@@ -99,6 +101,8 @@ const AppContext = ({ children }) => {
         handleAddtoCart,
         handleRemoveCart,
         handlecartProductQuantity,
+        quantity,
+        setQuantity,
       }}
     >
       {children}
