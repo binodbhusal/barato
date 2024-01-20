@@ -7,30 +7,23 @@ import './CartItem.scss';
 
 const CartItem = () => {
   const { cartItems, handleRemoveCart, handlecartProductQuantity } = useContext(Context);
+
   return (
     <div className="cart-products">
       {cartItems.map((item) => (
         <div className="cart-product" key={item.id}>
           <div className="img-container">
-            <img
-              src={
-              process.env.REACT_APP_DEV_URL
-              + item.attributes.img.data[0].attributes.url
-            }
-              alt=""
-            />
+            {item.attributes?.img?.data && item.attributes.img.data[0]?.attributes?.url && (
+            <img src={process.env.REACT_APP_DEV_URL + item.attributes.img.data[0].attributes.url} alt="" />
+            )}
           </div>
           <div className="product-details">
             <span className="name">{item.attributes.title}</span>
-            <MdClose className="btn-close" onClick={() => handleRemoveCart(item)} />
-            <div className="quantity-buttons">
-              <span onClick={() => handlecartProductQuantity('dec', item)}>-</span>
-              <span>{item.attributes.quantity}</span>
-              <span onClick={() => handlecartProductQuantity('inc', item)}>+</span>
-            </div>
+            <sapn className="close-btn-span"><MdClose className="close-button" onClick={() => handleRemoveCart(item)} /></sapn>
+
             <div className="text">
               <span>
-                { item.attributes.quantity === 1 ? '1 item' : `${item.attributes.quantity} items` }
+                { item.attributes.quantity === 1 ? '1 Item' : `${item.attributes.quantity} Items` }
                 {' '}
                 {' '}
                 price
@@ -38,8 +31,13 @@ const CartItem = () => {
               <span>=</span>
               <span className="highlight">
                 &euro;
-                { item.attributes.price * item.attributes.quantity}
+                { (item.attributes.price * item.attributes.quantity).toFixed(2)}
               </span>
+            </div>
+            <div className="quantity-buttons">
+              <span onClick={() => handlecartProductQuantity('dec', item)}>-</span>
+              <span>{item.attributes.quantity}</span>
+              <span onClick={() => handlecartProductQuantity('inc', item)}>+</span>
             </div>
           </div>
         </div>
