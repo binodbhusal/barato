@@ -11,7 +11,6 @@ const AppContext = ({ children }) => {
   const [cartCount, setCatrCount] = useState(0);
   const [cartSubTotal, setCartSubTotal] = useState(0);
   const [quantity, setQuantity] = useState(1);
-
   const location = useLocation();
 
   useEffect(() => {

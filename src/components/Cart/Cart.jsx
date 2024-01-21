@@ -1,4 +1,6 @@
-import { useContext, useEffect, useRef } from 'react';
+import {
+  useContext, useEffect, useRef,
+} from 'react';
 import { IoIosArrowForward } from 'react-icons/io';
 import { useNavigate } from 'react-router-dom';
 
@@ -97,6 +99,7 @@ const Cart = ({ showCart, setShowCart }) => {
                   type="button"
                   className="checkout-cta"
                   onClick={handlePayment}
+
                 >
                   <span>
                     Confirm Order
