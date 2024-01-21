@@ -1,0 +1,258 @@
+@import "../../css-config/mixins.scss";
+
+.header-container {
+  background-color: #f9f9f9;
+  width: 100%;
+  padding: 0 1.2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  z-index: 99;
+  position: fixed;
+  top: 0;
+
+  @include md {
+    padding: 0 2.5rem;
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3.5rem;
+    width: 100%;
+
+    @include md {
+      height: 4.5rem;
+    }
+
+    .left {
+      cursor: pointer;
+
+      img {
+        width: 100px;
+        height: 40px;
+
+        @include md {
+          width: 15%;
+          height: 10%;
+        }
+      }
+
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+    }
+
+    .center-items {
+      display: none;
+
+      a {
+        text-decoration: none;
+        color: #0c4175;
+      }
+
+      @include md {
+        list-style: none;
+        gap: 1rem;
+        transform: translate(-25%);
+        position: absolute;
+        left: 25%;
+        top: 35%;
+        display: flex;
+        align-items: center;
+      }
+
+      li {
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        color: rgba(12, 65, 117, 0.7);
+
+        &:hover {
+          color: #0c4175;
+        }
+      }
+    }
+
+    .right {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+
+      @include md {
+        flex-grow: 0;
+      }
+
+      .search-container {
+        padding: 0 0;
+        display: flex;
+        align-items: center;
+
+        @include md {
+          border-radius: 10px;
+          width: 250px;
+          height: 40px;
+          background-color: #f6ebee;
+          padding: 0.5em 1em;
+          display: flex;
+          align-items: center;
+          font-size: 1.07em;
+          transition: 0.4s ease-in-out;
+        }
+
+        input {
+          display: none;
+        }
+
+        @include md {
+          input {
+            width: 250px;
+            height: 40px;
+            background-color: #f6ebee;
+            border: none;
+            border-radius: 10px;
+            align-items: center;
+            position: relative;
+            font-size: 16px;
+            text-transform: uppercase;
+            display: block;
+            outline: none;
+
+            &::placeholder {
+              color: rgba(12, 65, 117, 0.4);
+            }
+          }
+        }
+
+        .search-icon {
+          color: #0c4175;
+          cursor: pointer;
+
+          @include md {
+            color: #fc628d;
+          }
+        }
+      }
+
+      svg {
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+        align-items: center;
+        color: #0c4175;
+
+        @include md {
+          font-size: 1.5rem;
+        }
+      }
+
+      .person {
+        max-width: 100%;
+        display: flex;
+
+        .person-span {
+          display: flex;
+          gap: 5px;
+          width: 100%;
+
+          &:hover {
+            color: #fc628d;
+
+            svg {
+              color: #fc628d;
+            }
+          }
+        }
+
+        button {
+          background-color: transparent;
+          border: none;
+          color: #0c4175;
+
+          img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+          }
+        }
+
+        .user-info {
+          background-color: #0c4175;
+          height: 150px;
+          position: absolute;
+          top: 60px;
+          right: 10px;
+          width: 85%;
+          border-radius: 8px;
+          color: #f9f9f9;
+          transition: transform  0.3s ease-in-out;
+
+          @include md {
+            top: 72px;
+            right: 90px;
+            width: 23%;
+          }
+
+          .user-info-span {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+            margin-left: 16px;
+
+            img {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+            }
+          }
+
+          button {
+            border: none;
+            color: #f9f9f9;
+            margin-left: 35%;
+            margin-top: 12%;
+            background-color: #fc628d;
+            padding: 5px 20px;
+            border-radius: 10px;
+
+            &:hover {
+              background-color: rgba(252, 98, 141, 0.9);
+            }
+          }
+        }
+      }
+
+      .cart-icon {
+        position: relative;
+
+        span {
+          min-width: 1.2rem;
+          background-color: #ff004d;
+          border-radius: 10px;
+          position: absolute;
+          top: -6px;
+          right: -12px;
+          font-size: 0.8rem;
+          line-height: 1;
+          padding: 2.5px;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  &.sticky-header {
+    @include md {
+      background-color: #dff2f8;
+      position: sticky;
+      top: 0;
+      animation: skickyHeader 0.3s ease forwards;
+    }
+  }
+}
+
+@keyframes skickyHeader {
+  0% { transform: translateY(-4rem); }
+  100% { transform: translateY(0); }
+}

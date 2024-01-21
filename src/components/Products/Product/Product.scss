@@ -1,0 +1,70 @@
+@import "../../../css-config/mixins.scss";
+
+.product-card {
+  width: calc(50% - 10px);
+  margin-bottom: 1.25rem;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #f2f4f7;
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+
+  @include md {
+    width: calc(25% - 15px);
+  }
+
+  .thumb-nail {
+    width: 100%;
+    height: 12rem;
+    background-color: rgba(252, 98, 141, 0.1);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+
+    @include md {
+      height: 18rem;
+    }
+
+    img {
+      transition: all ease 0.3s;
+      display: block;
+      width: 70%;
+      margin: auto auto;
+      cursor: pointer;
+    }
+  }
+
+  .product-details {
+    border-radius: 0 0 10px 10px;
+    margin-left: 1rem;
+
+    .name {
+      font-size: 0.75rem;
+      display: block;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      color: #0c4175;
+      font-weight: 600;
+
+      @include md {
+        font-size: 1rem;
+        margin-bottom: 0.3rem;
+      }
+    }
+
+    .price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fc628d;
+
+      @include md {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}

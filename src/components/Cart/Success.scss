@@ -1,0 +1,37 @@
+.success-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .success {
+    background-color: rgba(252, 98, 141, 0.2);
+    padding: 10% 10%;
+    border-radius: 10px;
+    color: #0c4175;
+    text-align: center;
+
+    .order-complete {
+      color: #29bf12;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .btn-success-continue {
+      outline: 0;
+      border: 0;
+      height: 40px;
+      width: 150px;
+      cursor: pointer;
+      font-size: 16px;
+      color: #f9f9f9;
+      background-color: #0c4175;
+      border-bottom: 3px solid #0c4175;
+      border-radius: 10px;
+
+      &:hover {
+        background-color: rgba(12, 65, 117, 0.8);
+      }
+    }
+  }
+}
