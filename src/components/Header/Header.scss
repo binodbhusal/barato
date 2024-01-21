@@ -3,7 +3,6 @@
 .header-container {
   background-color: #f9f9f9;
   width: 100%;
-  color: #333;
   padding: 0 1.2rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   z-index: 99;
@@ -16,22 +15,19 @@
 
   .header-content {
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
     align-items: center;
     height: 3.5rem;
-    max-width: 1200px;
-    margin: 0 auto;
-
+    width: 100%;
     @include md {
-      height: 4rem;
+      height: 4.5rem;
     }
 
     .left {
       cursor: pointer;
-
       img {
-        width: 100%;
-        height: 50%;
+        width: 100px;
+        height: 40px;
 
         @include md {
           width: 15%;
@@ -79,14 +75,11 @@
 
     .right {
       display: flex;
-      gap: 1.3rem;
+      gap: 1.5rem;
       align-items: center;
-      margin-left: -40px;
-
       @include md {
-        gap: 1.5rem;
+        flex-grow: 0;
       }
-
       .search-container {
         padding: 0 0;
         display: flex;
@@ -105,7 +98,7 @@
         }
 
         input {
-          visibility: hidden;
+          display: none;
         }
 
         @include md {
@@ -119,7 +112,7 @@
             position: relative;
             font-size: 16px;
             text-transform: uppercase;
-            visibility: visible;
+            display: block;
             outline: none;
 
             &::placeholder {
@@ -144,12 +137,79 @@
         cursor: pointer;
         align-items: center;
         color: #0c4175;
-
         @include md {
           font-size: 1.5rem;
         }
       }
-
+      .person {
+        max-width: 100%;
+        display: flex;
+        .person-span {
+          display: flex;
+          gap: 5px;
+          width: 100%;
+          &:hover {
+            color: #fc628d;
+            svg{
+              color: #fc628d;
+            }
+          }
+        }
+        button {
+          background-color: transparent;
+          border: none;
+          color: #0c4175;
+      
+          img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+          }
+        }
+        .user-info {
+          background-color: #0c4175;
+          height: 150px;
+          position: absolute;
+          top: 60px;
+          right: 10px;
+          width: 85%;
+          border-radius: 8px;
+          color: #f9f9f9;
+          transition: transform  0.3s ease-in-out;
+          @include md {
+            top: 72px;
+            right: 90px;
+            width: 23%;
+          }
+         .user-info-span {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+            margin-left: 16px;
+          
+            img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            }
+          }
+          button {
+           background-color: transparent;
+           border: none;
+           color: #f9f9f9;
+           margin-left: 35%;
+           margin-top: 12%;
+           background-color: #fc628d;
+           padding: 5px 20px;
+           border-radius: 10px;
+           &:hover {
+            background-color: rgba(252, 98, 141, 0.9);
+           }
+          }
+        }
+        
+       
+      }
       .cart-icon {
         position: relative;
 
